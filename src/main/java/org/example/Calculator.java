@@ -14,7 +14,9 @@ public class Calculator {
         } else if (op == Operator.MULTIPLY) {
             return a * b;
         } else if (op == Operator.DIVIDE) {
-            // throw an ArithmeticException when b == 0
+            if (b == 0) {
+                throw new ArithmeticException("Division by zero is not allowed");
+            }
             return a / b;
         } else {
             throw new IllegalArgumentException("Unknown operator");
